@@ -18,7 +18,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal|clip_vertical"
-        android:text="Aero"
+        android:text="Automate"
         android:textColor="@color/white"
         android:textSize="64dp"
         app:layout_constraintBottom_toBottomOf="parent"

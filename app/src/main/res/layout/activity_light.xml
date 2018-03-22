@@ -39,6 +39,14 @@
         android:layout_below="@+id/switch2"
         android:layout_marginTop="49dp" />
 
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/switch4"
+        android:layout_below="@+id/switch4"
+        android:layout_marginTop="40dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -74,6 +82,15 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_alignTop="@+id/switch4"
         android:text="Light 4"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/switch5"
+        android:text="Master"
         android:textSize="20sp" />
 
 </RelativeLayout>

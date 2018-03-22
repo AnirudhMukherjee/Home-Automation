@@ -11,6 +11,7 @@ public class tv_activity extends AppCompatActivity {
     public static final String MY_PREFS_NAME = "MyPrefsFile3";
     public Switch sw1;
     public Switch sw2;
+    public Switch sw3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class tv_activity extends AppCompatActivity {
         setContentView(R.layout.activity_tv_activity);
         sw1 = (Switch) findViewById(R.id.switch1);
         sw2 = (Switch) findViewById(R.id.switch2);
+        sw3 = (Switch)findViewById(R.id.switch3);
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String restoredText = prefs.getString("text", null);
         sw1.setChecked(prefs.getBoolean("switch1",false));
@@ -33,6 +35,20 @@ public class tv_activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
+            }
+        });
+
+        sw3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(sw3.isChecked()){
+                    sw1.setChecked(true);
+                    sw2.setChecked(true);
+                }
+                else{
+                    sw1.setChecked(false);
+                    sw2.setChecked(false);
+                }
             }
         });
     }

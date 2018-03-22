@@ -12,6 +12,7 @@ public class Fan_activity extends AppCompatActivity {
     public Switch sw1;
     public Switch sw2;
     public Switch sw3;
+    public Switch sw4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class Fan_activity extends AppCompatActivity {
         sw1 = (Switch) findViewById(R.id.switch1);
         sw2 = (Switch) findViewById(R.id.switch2);
         sw3 = (Switch) findViewById(R.id.switch3);
+        sw4 = (Switch)findViewById(R.id.switch4);
+
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String restoredText = prefs.getString("text", null);
         sw1.setChecked(prefs.getBoolean("switch1",false));
@@ -42,6 +45,22 @@ public class Fan_activity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
 
+            }
+        });
+
+        sw4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(sw4.isChecked()){
+                    sw1.setChecked(true);
+                    sw2.setChecked(true);
+                    sw3.setChecked(true);
+                }
+                else{
+                    sw1.setChecked(false);
+                    sw2.setChecked(false);
+                    sw3.setChecked(false);
+                }
             }
         });
     }

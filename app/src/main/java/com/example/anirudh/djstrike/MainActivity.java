@@ -41,8 +41,28 @@ public class MainActivity extends AppCompatActivity {
         RecyclerViewClickListener listener = new RecyclerViewClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Intent i = new Intent(view.getContext(), LightActivity.class);
-                startActivity(i);
+                if(position ==0) {
+                    Intent i = new Intent(view.getContext(), LightActivity.class);
+                    startActivity(i);
+                }
+                if(position ==1) {
+                    Intent i = new Intent(view.getContext(), Fan_activity.class);
+                    startActivity(i);
+                }
+                if(position ==2) {
+                    Intent i = new Intent(view.getContext(), tv_activity.class);
+                    startActivity(i);
+                }
+                if(position ==3) {
+                    Intent i = new Intent(view.getContext(), pc_activity.class);
+                    startActivity(i);
+                }
+                if(position ==4) {
+                    Intent i = new Intent(view.getContext(), ac_activity.class);
+                    startActivity(i);
+                }
+
+
             }
         };
 
@@ -94,10 +114,10 @@ public class MainActivity extends AppCompatActivity {
     private void prepareAppliances(){
         int covers[] = new int[]{
                 R.drawable.fbi,
-                R.drawable.fan,
+                R.drawable.fen,
                 R.drawable.tv1,
                 R.drawable.pc1,
-                R.drawable.ac,
+                R.drawable.acacac,
         };
 
         Appliance a = new Appliance("Lights", "4", covers[0]);
@@ -155,6 +175,13 @@ public class MainActivity extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+
     }
 }
 
